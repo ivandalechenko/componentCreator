@@ -29,30 +29,26 @@ module.exports = router;
 const ${componentName}Service = require('./${componentName}-service');
 
 class ${componentName}Controller {
-    async set(req, res, next) {
-        try {
-            const { value } = req.body;
-            const jsonString = atob(value);
-            const obj = JSON.parse(jsonString);
-            console.log(obj);
+    // async set(req, res, next) {
+    //     try {
+    //         const { data } = req.body;
+    //         await ${componentName}Service.set(data);
+    //         return res.json('ok');
+    //     } catch (e) {
+    //         next(e);
+    //     }
+    // }
 
-            await ${componentName}Service.set(obj);
-            return res.json('ok');
-        } catch (e) {
-            next(e);
-        }
-    }
+    // async get(req, res, next) {
+    //     try {
+    //         const { type } = req.query;
 
-    async get(req, res, next) {
-        try {
-            const { type } = req.query;
-
-            const scores = await ${componentName}Service.get(type);
-            return res.json(scores);
-        } catch (e) {
-            next(e);
-        }
-    }
+    //         const scores = await ${componentName}Service.get(type);
+    //         return res.json(scores);
+    //     } catch (e) {
+    //         next(e);
+    //     }
+    // }
 }
 
 module.exports = new ${componentName}Controller();
